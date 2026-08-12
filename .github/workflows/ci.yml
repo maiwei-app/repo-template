@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  no-ai-attribution:
+    uses: maiwei-app/workflows/.github/workflows/no-ai-attribution.yml@main
+
+  # Default profile: Python. To switch, replace this job with ci-flutter.yml
+  # or ci-hugo.yml from maiwei-app/workflows and update the sonar dependency.
+  quality:
+    uses: maiwei-app/workflows/.github/workflows/ci-python.yml@main
+
+  sonar:
+    needs: quality
+    uses: maiwei-app/workflows/.github/workflows/sonar-scan.yml@main
+    secrets: inherit
+    with:
+      project-key: maiwei-app_REPLACE_WITH_REPO_NAME
