@@ -7,8 +7,8 @@ on:
     branches: [main]
 
 jobs:
-  no-ai-attribution:
-    uses: maiwei-app/workflows/.github/workflows/no-ai-attribution.yml@main
+  # no-ai-attribution runs automatically on every PR via the org-wide ruleset
+  # required workflow (maiwei-app/workflows) — no need to call it here too.
 
   # Default profile: Python. To switch, replace this job with ci-flutter.yml
   # or ci-hugo.yml from maiwei-app/workflows and update the sonar dependency.
