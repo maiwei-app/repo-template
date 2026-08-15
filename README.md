@@ -19,9 +19,12 @@ there too as they show up. There's no `tests/` directory yet; the
 `.py` logic outside it. The moment real code lands, real passing
 tests become required — no placeholder tests, ever.
 
-Before first use: replace `REPLACE_WITH_REPO_NAME` in `ci.yml`,
-`sonar-project.properties`, and `.release-please-config.json` with the
-actual repo name, and bind the project in SonarCloud.
+Before first use: replace `REPLACE_WITH_REPO_NAME` in this file's title
+with the actual repo name. The Sonar project key is derived automatically
+by `ci.yml` from the repo name — nothing to edit there. SonarCloud project
+creation is manual (org policy): create the project under the `maiwei-app`
+organization key before the first push, or the `sonar` job will fail with
+no project to report to.
 
 ## Releases
 

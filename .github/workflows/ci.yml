@@ -19,6 +19,6 @@ jobs:
     needs: quality
     uses: maiwei-app/workflows/.github/workflows/sonar-scan.yml@main
     with:
-      project-key: maiwei-app_REPLACE_WITH_REPO_NAME
+      project-key: ${{ github.repository_owner }}_${{ github.event.repository.name }}
     secrets:
       sonar-token: ${{ secrets.SONAR_TOKEN }}
