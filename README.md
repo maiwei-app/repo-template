@@ -29,4 +29,16 @@ Versioning is automated via [release-please](https://github.com/googleapis/relea
 commits must follow [Conventional Commits](https://www.conventionalcommits.org/).
 Every push to `main` updates a `chore(main): release X.Y.Z` PR; merging it
 tags and publishes the release. Starts at `0.1.0`; bump to `1.0.0` when the
-project is stable (see `bumpMinorPreMajor` in `.release-please-config.json`).
+project is stable (see `bump-minor-pre-major` in `.release-please-config.json`).
+
+**First release is auto-bootstrapped, not PR-based.** release-please always
+proposes `1.0.0` for a repo's very first release, ignoring the manifest and
+`bump-minor-pre-major` — this is intended upstream behavior, not a bug
+(there's no previous release to bump from, so nothing to apply the setting
+to; see [googleapis/release-please#1209](https://github.com/googleapis/release-please/issues/1209#issuecomment-1011576348)).
+Since every repo cloned from this template starts with zero releases, it
+hits every one of them. `release.yml` works around it: if no release exists
+yet, it cuts one directly from the manifest version (`v0.1.0`) and skips
+release-please for that run. From the next push onward a previous release
+exists, so release-please computes bumps normally — no action needed, it's
+self-disabling after the first run.
