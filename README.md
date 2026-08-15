@@ -26,6 +26,12 @@ creation is manual (org policy): create the project under the `maiwei-app`
 organization key before the first push, or the `sonar` job will fail with
 no project to report to.
 
+Sonar analyzes the full repository, with no path exclusions. For a repo
+like this one — whose only real content is its workflow and config files
+under `.github/`, `.release-please-config.json`, etc. — that's the entire
+codebase being scanned; carving out an exclusion would leave nothing
+for Sonar to analyze.
+
 ## Releases
 
 Versioning is automated via [release-please](https://github.com/googleapis/release-please) —
