@@ -19,7 +19,24 @@ jobs:
           app-id: ${{ vars.MAIBOT_APP_ID }}
           private-key: ${{ secrets.MAIBOT_APP_PRIVATE_KEY }}
 
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Bootstrap initial release if none exists
+        id: bootstrap
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          if [ -z "$(gh release list --limit 1)" ]; then
+            version=$(jq -r '.["."]' .release-please-manifest.json)
+            gh release create "v${version}" --title "v${version}" --notes "Initial release"
+            echo "bootstrapped=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "bootstrapped=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Run Release Please
+        if: steps.bootstrap.outputs.bootstrapped == 'false'
         uses: googleapis/release-please-action@v4
         with:
           token: ${{ steps.app-token.outputs.token }}
