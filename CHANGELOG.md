@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/maiwei-app/repo-template/compare/v0.1.3...v0.1.4) (2026-08-17)
+
+
+### Bug Fixes
+
+* drop redundant leading separator from PR footer ([#16](https://github.com/maiwei-app/repo-template/issues/16)) ([7a8a279](https://github.com/maiwei-app/repo-template/commit/7a8a279b34f09d56164992faa28a85af485a3502))
+
 ## [0.1.3](https://github.com/maiwei-app/repo-template/compare/v0.1.2...v0.1.3) (2026-08-17)
 
 
