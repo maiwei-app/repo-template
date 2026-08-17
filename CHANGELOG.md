@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/maiwei-app/repo-template/compare/v0.1.2...v0.1.3) (2026-08-17)
+
+
+### Bug Fixes
+
+* use manifest-mode config for release-please ([#14](https://github.com/maiwei-app/repo-template/issues/14)) ([7b3212d](https://github.com/maiwei-app/repo-template/commit/7b3212d9842be138fe0aa00b0d8b695edab58790))
+
 ## [0.1.2](https://github.com/maiwei-app/repo-template/compare/v0.1.1...v0.1.2) (2026-08-15)
 
 
