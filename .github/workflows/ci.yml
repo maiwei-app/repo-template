@@ -17,3 +17,7 @@ jobs:
           echo "Lee la política: https://app.notion.com/p/colomr/Calidad-del-C-digo-3d5c368461ee8126b387fb8329f703f6"
           echo "Luego dile al modelo: \"inicializa el CI de este repo\" — seguirá scripts/sw-quality-checks.md."
           exit 1
+
+  lint-yaml:
+    if: github.repository == 'maiwei-app/repo-template'
+    uses: maiwei-app/workflows/.github/workflows/lint-yaml.yml@main
