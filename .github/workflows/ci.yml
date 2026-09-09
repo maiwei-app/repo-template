@@ -18,6 +18,6 @@ jobs:
           echo "Luego dile al modelo: \"inicializa el CI de este repo\" — seguirá scripts/sw-quality-checks.md."
           exit 1
 
-  lint-yaml:
+  yaml-testing:
     if: github.repository == 'maiwei-app/repo-template'
     uses: maiwei-app/workflows/.github/workflows/lint-yaml.yml@main
