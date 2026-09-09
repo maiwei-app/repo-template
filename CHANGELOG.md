@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/maiwei-app/repo-template/compare/v0.2.0...v0.2.1) (2026-09-09)
+
+
+### Refactoring
+
+* **ci:** rename job caller from lint-yaml to yaml-testing ([#28](https://github.com/maiwei-app/repo-template/issues/28)) ([9ef6e65](https://github.com/maiwei-app/repo-template/commit/9ef6e650e691ea994f1a88c24ea1f77115e63f31))
+
 ## [0.2.0](https://github.com/maiwei-app/repo-template/compare/v0.1.5...v0.2.0) (2026-09-09)
 
 
