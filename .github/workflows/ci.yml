@@ -7,18 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  # no-ai-attribution runs automatically on every PR via the org-wide ruleset
-  # required workflow (maiwei-app/workflows) — no need to call it here too.
-
-  # Default profile: Python. To switch, replace this job with ci-flutter.yml
-  # or ci-hugo.yml from maiwei-app/workflows and update the sonar dependency.
-  quality:
-    uses: maiwei-app/workflows/.github/workflows/ci-python.yml@main
-
-  sonar:
-    needs: quality
-    uses: maiwei-app/workflows/.github/workflows/sonar-scan.yml@main
-    with:
-      project-key: ${{ github.repository_owner }}_${{ github.event.repository.name }}
-    secrets:
-      sonar-token: ${{ secrets.SONAR_TOKEN }}
+  not-initialized:
+    runs-on: ubuntu-latest
+    steps:
+      - name: This repo's CI has not been initialized
+        run: |
+          echo "::error::Este repo no tiene CI todavía."
+          echo "Lee la política: https://app.notion.com/p/colomr/Calidad-del-C-digo-3d5c368461ee8126b387fb8329f703f6"
+          echo "Luego dile al modelo: \"inicializa el CI de este repo\" — seguirá scripts/sw-quality-checks.md."
+          exit 1
