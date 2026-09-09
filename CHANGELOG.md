@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/maiwei-app/repo-template/compare/v0.1.5...v0.2.0) (2026-09-09)
+
+
+### Features
+
+* **ci:** fail loud until a repo's CI is actually initialized ([#26](https://github.com/maiwei-app/repo-template/issues/26)) ([7b18d89](https://github.com/maiwei-app/repo-template/commit/7b18d89944d4bba7b5772d382376db0c7b14e6b1))
+
 ## [0.1.5](https://github.com/maiwei-app/repo-template/compare/v0.1.4...v0.1.5) (2026-09-09)
 
 
