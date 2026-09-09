@@ -8,6 +8,7 @@ on:
 
 jobs:
   not-initialized:
+    if: github.repository != 'maiwei-app/repo-template'
     runs-on: ubuntu-latest
     steps:
       - name: This repo's CI has not been initialized
